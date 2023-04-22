@@ -1,0 +1,16 @@
+a, .mat-flat-button {
+  margin-left: 1%;
+  background-color: rgba(62, 0, 128, 0.50);
+  color: white;
+}
+
+.mat-icon-button {
+  color: white;
+}
+.spacer {
+  flex: auto;
+}
+
+.docs-scene-toolbar-title {
+  font-size: x-large;
+}

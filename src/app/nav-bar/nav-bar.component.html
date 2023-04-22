@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span class="docs-scene-toolbar-title">University</span>
+  <a *ngIf="isLoggedIn" mat-flat-button [routerLink]="['/user/list']">
+    Users
+  </a>
+  <a *ngIf="isLoggedIn" mat-flat-button [routerLink]="['/note/list']">
+    Notes
+  </a>
+  <a *ngIf="isLoggedIn" mat-flat-button [routerLink]="['/note/create']">
+    Create Note
+  </a>
+  <a
+    *ngIf="isLoggedIn"
+    mat-flat-button
+    [routerLink]="['/note/list/:id']"
+    [queryParams]="{ id: user.id }"
+  >
+    My Notes
+  </a>
+  <a *ngIf="isLoggedIn" mat-flat-button [routerLink]="['/user/update']">
+    Change Password
+  </a>
+  <span class="spacer"></span>
+
+  <button *ngIf="isLoggedIn" mat-flat-button>
+    <mat-icon>account_circle</mat-icon>
+    Account
+  </button>
+  <button *ngIf="isLoggedIn" mat-icon-button color="accent" (click)="logOut()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

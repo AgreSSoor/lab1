@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+          <form (ngSubmit)="login()">
+              <mat-form-field appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input matInput type="username" placeholder="exampleusername" [formControl]="username" required>
+                  <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="$0mePa$$word"
+                  [formControl]="password" [type]="hidePassword ? 'password' : 'text'" required>
+                  <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                  [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+              </mat-form-field>
+
+              <button type="submit" color="accent" mat-flat-button>
+                  Login
+              </button>
+          </form>
+      </mat-card-content>
+  </mat-card>
+  <a mat-button color="primary" [routerLink]="['/register']">
+      Go to Registration
+  </a>
+</div>
